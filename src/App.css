@@ -26,6 +26,7 @@
 } 
 
 .Messages-list {
+  overflow-y:auto;
   width: 40.3%;
   height: 60%;
   margin: 30px;
@@ -39,7 +40,6 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
-  flex-direction: column-reverse;
 }
 
 .Guest-list{
@@ -137,7 +137,7 @@ width: 100%;
 }
 
 .Message-content > .text {
-  padding: 10px;
+    padding: 10px;
   max-width: 400px;
   height: 20px;
   margin: 0;
@@ -148,7 +148,7 @@ width: 100%;
 }
 
 .currentMember > .Message-content .text {
-  background-color: rgb(83, 65, 135);
+  background-color: rgb(73, 42, 158);
 }
 
 form {
