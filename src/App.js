@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Background from "./components/background";
-import Guests from "./components/GuestList";
 import Input from "./components/Input.jsx";
 import Messages from "./components/Messages";
 import Guest from "./components/GuestList";
@@ -143,12 +142,10 @@ function randomName() {
   const noun = nouns[Math.floor(Math.random() * nouns.length)];
   return adjective + noun;
 }
-const guest = randomName();
 
 function randomColor() {
   return "#" + Math.floor(Math.random() * 0xffffff).toString(16);
 }
-const guestAvatar = randomColor();
 
 class App extends Component {
   state = {
