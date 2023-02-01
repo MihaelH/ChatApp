@@ -109,7 +109,7 @@ width: 100%;
 
 .Messages-message.currentMember {
   flex-direction:row-reverse;
-  text-align: right;
+  text-align:justify;
 }
 
 .Message-content {
