@@ -13,7 +13,9 @@ class Background extends Component {
     };
     return (
       <div style={myStyle}>
-        <header className="header"><h1>Welcome!</h1></header>
+        <header className="header">
+          <h1>Welcome!</h1>
+        </header>
         <footer className="footer">@Mihael</footer>
       </div>
     );
