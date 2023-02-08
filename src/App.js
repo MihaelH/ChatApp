@@ -171,11 +171,25 @@ class App extends Component {
       console.log(member);
     });
     const room = this.drone.subscribe("observable-room");
+
     room.on("data", (data, member) => {
       const messages = this.state.messages;
       messages.push({ member, text: data });
       this.setState({ messages });
     });
+
+    /*room.on("members", function (members) {
+      // List of members as an array
+    });*/
+
+    room.on("member_join", function (member) {
+      const newGuest = member.clientData.username;
+      const newGuestColor = member.clientData.color;
+      console.log(newGuest);
+      console.log(newGuestColor);
+    });
+
+    room.on("member_leave", function (member) {});
   }
 
   render() {
