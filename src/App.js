@@ -178,10 +178,10 @@ class App extends Component {
       this.setState({ messages });
     });
 
-    /*room.on("members", function (members) {
-      // List of members as an array
-    });*/
-
+    /* room.on("members", function (members) {
+      console.log(members);
+    });
+*/
     room.on("member_join", function (member) {
       const newGuest = member.clientData.username;
       const newGuestColor = member.clientData.color;
@@ -197,10 +197,7 @@ class App extends Component {
       <div className="App">
         <Background />
 
-        <Guest
-          guests={this.state.member.username}
-          color={this.state.member.color}
-        />
+        <Guest messages={this.state.messages} />
 
         <Messages
           messages={this.state.messages}

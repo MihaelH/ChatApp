@@ -1,7 +1,7 @@
 import { Component } from "react";
 
 class Guest extends Component {
-  render() {
+  /*render() {
     const { guests } = this.props;
     const { color } = this.props;
     return (
@@ -11,6 +11,28 @@ class Guest extends Component {
           <div className="activeGuests">{guests}</div>
           <div className="avatar" style={{ backgroundColor: color }}></div>
         </div>
+      </div>
+    );
+  }
+*/
+  render() {
+    const { messages } = this.props;
+    return (
+      <ul className="Guest-list" key={"{member.clientData.id}"}>
+        <div className="Guest-list-header">Guest List:</div>
+        {messages.map((m) => this.renderGuests(m))}
+      </ul>
+    );
+  }
+  renderGuests(message) {
+    const { member } = message;
+    return (
+      <div className="guestContainer">
+        <span
+          className="guestAvatar"
+          style={{ backgroundColor: member.clientData.color }}
+        />
+        <div className="activeGuests">{member.clientData.username}</div>
       </div>
     );
   }
