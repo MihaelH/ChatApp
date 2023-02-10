@@ -150,8 +150,8 @@ function randomColor() {
 class App extends Component {
   state = {
     guests: {
-      username: this.drone,
-      color: this.drone,
+      username: randomName(),
+      color: randomColor(),
     },
     messages: [],
     member: {
@@ -182,9 +182,10 @@ class App extends Component {
       this.setState({ messages });
     });
 
-    room.on("member_join", function (guests) {
+    room.on("member_join", (guests) => {
       const newGuest = guests.clientData.username;
       const newGuestColor = guests.clientData.color;
+      this.setState({ guests });
       console.log(newGuest);
       console.log(newGuestColor);
     });
@@ -208,10 +209,7 @@ class App extends Component {
       <div className="App">
         <Background />
 
-        <Guest
-          messages={this.state.messages}
-          currentMember={this.state.member}
-        />
+        <Guest guests={this.state.guests} currentMember={this.state.member} />
 
         <Messages
           messages={this.state.messages}

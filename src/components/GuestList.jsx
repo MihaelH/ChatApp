@@ -16,8 +16,6 @@ class Guest extends Component {
   }
 */
   render() {
-    const { messages } = this.props;
-
     return (
       <ul className="Guest-list" key={"{member.clientData.id}"}>
         <div className="Guest-list-header">Guest List:</div>
@@ -25,20 +23,20 @@ class Guest extends Component {
           className="guestAvatar"
           style={{ backgroundColor: this.props.currentMember.color }}
         />
+
         <div className="activeGuests">{this.props.currentMember.username}</div>
-        {messages.map((m) => this.renderGuests(m))}
       </ul>
     );
   }
-  renderGuests(guests) {
-    const { member } = guests;
+  renderGuests(guest) {
+    const { guests } = this.props;
     return (
-      <div className="guestContainer">
+      <div className="newguestContainer">
         <span
-          className="guestAvatar"
-          style={{ backgroundColor: member.clientData.color }}
+          className="newguestAvatar"
+          style={{ backgroundColor: guests.clientData.color }}
         />
-        <div className="activeGuests">{member.clientData.username}</div>
+        <div className="newactiveGuests">{guests.clientData.username}</div>
       </div>
     );
   }
