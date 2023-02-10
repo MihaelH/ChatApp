@@ -17,15 +17,21 @@ class Guest extends Component {
 */
   render() {
     const { messages } = this.props;
+
     return (
       <ul className="Guest-list" key={"{member.clientData.id}"}>
         <div className="Guest-list-header">Guest List:</div>
+        <span
+          className="guestAvatar"
+          style={{ backgroundColor: this.props.currentMember.color }}
+        />
+        <div className="activeGuests">{this.props.currentMember.username}</div>
         {messages.map((m) => this.renderGuests(m))}
       </ul>
     );
   }
-  renderGuests(message) {
-    const { member } = message;
+  renderGuests(guests) {
+    const { member } = guests;
     return (
       <div className="guestContainer">
         <span
