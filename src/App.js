@@ -174,6 +174,7 @@ class App extends Component {
       this.setState({ member });
       console.log(member);
     });
+
     const room = this.drone.subscribe("observable-room");
 
     room.on("data", (data, member) => {
@@ -190,17 +191,6 @@ class App extends Component {
       console.log(newGuestColor);
     });
 
-    /* room.on("members", function (members) {
-      console.log(members);
-    });
-*/
-    /*  room.on("member_join", function (member) {
-      const newGuest = member.clientData.username;
-      const newGuestColor = member.clientData.color;
-      console.log(newGuest);
-      console.log(newGuestColor);
-    });
-*/
     room.on("member_leave", function (member) {});
   }
 
