@@ -19,6 +19,13 @@ class Guest extends Component {
   // NE RADI !!!
 
   /*
+
+  const { newGuest, newGuestColor } = this.props;
+
+        <p>{newGuest}</p>
+        <p>{newGuestColor}</p>
+
+
   renderGuests(guest) {
     const { guests } = this.props;
     <ul className="Guest-list">
